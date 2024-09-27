@@ -12,7 +12,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className="bg-light-primary text-dark-primary font-poppins">
         <Navabar />
-        {children}
+        <main className="min-h-screen pt-12">{children}</main>
       </body>
     </html>
   )

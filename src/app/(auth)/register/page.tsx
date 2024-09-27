@@ -1,10 +1,5 @@
-import Form from "@/components/Form"
-import Input from "@/components/Input"
+import FormRegister from "./form"
 
 export default function Register() {
-  return (
-    <Form>
-      <Input name="username">username</Input>
-    </Form>
-  )
+  return <FormRegister />
 }
