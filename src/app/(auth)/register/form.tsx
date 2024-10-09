@@ -6,7 +6,7 @@ import Input from "@/components/Input"
 import { useFormState } from "react-dom"
 
 export default function FormRegister() {
-  const [state, action] = useFormState(register, undefined)
+  const [state, action, pending] = useFormState(register, undefined)
   console.log(state)
   return (
     <Form action={action}>
@@ -26,7 +26,9 @@ export default function FormRegister() {
         confirmPassword
       </Input>
       {state?.errors.username && <Err>{state.errors.confirmPassword}</Err>}
-      <Button type="submit">Register</Button>
+      <Button type="submit" disabled={pending}>
+        {pending ? "Registering..." : "Register"}
+      </Button>
     </Form>
   )
 }

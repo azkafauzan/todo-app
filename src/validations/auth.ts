@@ -11,3 +11,7 @@ export const registerValidation = z
     message: "password and confirm password does not match",
     path: ["confirmPassword"],
   })
+export const loginValidation = z.object({
+  username: z.string().min(3, "username must contains atleast 3 characters").max(30, "username too long"),
+  password: z.string().min(8, "password must contains atleast 8 characters").max(30, "password too long"),
+})
